@@ -2,7 +2,7 @@
 #https://class.coursera.org/exdata-002/human_grading/view/courses/972082/assessments/3/submissions
 #and creates applicable graphs from the data
 
-#lines 11-26 are based on a solution suggested by Peter Huber on the Coursera Exploratory Data Analysis
+#lines 11-27 are based on a solution suggested by Peter Huber on the Coursera Exploratory Data Analysis
 #discussion forum for reading selections of large datasets.
 
 #See -- https://class.coursera.org/exdata-002/forum/thread?thread_id=19
