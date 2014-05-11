@@ -2,8 +2,9 @@
 #https://class.coursera.org/exdata-002/human_grading/view/courses/972082/assessments/3/submissions
 #and creates applicable graphs from the data
 
-#lines 11-26 are based on code suggested by Peter Huber on the Coursera Exploratory Data Analysis
-#discussion forum.  See -- https://class.coursera.org/exdata-002/forum/thread?thread_id=19
+#lines 11-27 are based on a solution suggested by Peter Huber on the Coursera Exploratory Data Analysis
+#discussion forum for reading selections of large datasets.  
+#See -- https://class.coursera.org/exdata-002/forum/thread?thread_id=19
 
 #the lines below compiles lines from the two dates of interest -- 1/1/2007 and 1/2/2007 --
 #and reads them into a data frame
@@ -38,20 +39,13 @@ energy$Date.Time<-strptime(dt,format="%d/%m/%Y %H:%M:%S") #formats to date/frame
 energy$Week.Day<-weekdays(energy$Date.Time)  #creates a field with weekday for each record
 
 
-
-
-
 png("plot4.png", width = 800, height = 600) #resizes the png device to allow for a larger image
 
 par(mfrow=c(2,2),mar=c(5,5,2,2),cex.lab=1) #four graphs;adjusts margins and creates more readable axis label font size
 
-
-
 with(energy,plot(Date.Time,Global_active_power,type="l",ylab="Global Active Power",xlab=""))
 
 with(energy,plot(Date.Time,Voltage,type="l",ylab="Voltage",xlab="datetime"))
-
-
 
 with(energy,plot(Date.Time,Sub_metering_1,type="l",ylab="",xlab=""))
 with(energy,lines(Date.Time,Sub_metering_2,col="red"))
@@ -61,13 +55,9 @@ legend("topright",lty="solid",col=c("black","red","blue"),bty="n",legend=c("Sub-
                                                                    "Sub-metering_2",
                                                                    "Sub-metering_3"))
 
-
-
-
 with(energy,plot(Date.Time,Global_reactive_power,type="l",ylab="Global_reactive_power",xlab="datetime"))
 
-                                                          
-
+                                                      
 dev.off()
 
 
