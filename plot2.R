@@ -2,9 +2,10 @@
 #https://class.coursera.org/exdata-002/human_grading/view/courses/972082/assessments/3/submissions
 #and creates applicable graphs from the data
 
-#lines 11-26 are based on code suggested by Peter Huber on the Coursera Exploratory Data Analysis
-#discussion forum.  See -- https://class.coursera.org/exdata-002/forum/thread?thread_id=19
+#lines 11-26 are based on a solution suggested by Peter Huber on the Coursera Exploratory Data Analysis
+#discussion forum for reading selections of large datasets.
 
+#See -- https://class.coursera.org/exdata-002/forum/thread?thread_id=19
 #the lines below read lines from the two dates of interest -- 1/1/2007 and 1/2/2007 --
 #and reads them into a data frame
 
@@ -37,16 +38,11 @@ energy$Date.Time<-strptime(dt,format="%d/%m/%Y %H:%M:%S") #formats to date/frame
 
 energy$Week.Day<-weekdays(energy$Date.Time)  #creates a field with weekday for each record
 
-
-
-
 png("plot2.png", width = 800, height = 600) #resizes the png device to allow for a larger image
 
 par(mar=c(3,5,2,2),cex.lab=1.25) #adjusts margins and creates more readable axis label font size
 
-
 plot(energy$Date.Time,energy$Global_active_power,type="l",ylab="Global Active Power (kilowatts)",xlab='')
-
 
 dev.off()
 
